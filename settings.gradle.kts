@@ -21,5 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "NavigationTestApp"
 include(":app")
-include(":feature_1")
-include(":feature_2")
