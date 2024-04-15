@@ -19,12 +19,16 @@ class ListViewModel @Inject constructor(
 ) : StateAndEventViewModel<ListUIState, ListUIEvent>(ListUIState(null)) {
     override suspend fun handleEvent(event: ListUIEvent) {
         when (event) {
-            ListUIEvent.Dismiss -> {
+            is ListUIEvent.Dismiss -> {
                 Log.d(TAG, "handleEvent: Dismiss, to navigation")
             }
 
-            ListUIEvent.GetList -> {
+            is ListUIEvent.GetList -> {
                 getProductList()
+            }
+
+            is ListUIEvent.ProductClicked -> {
+
             }
         }
     }
@@ -38,7 +42,7 @@ class ListViewModel @Inject constructor(
                 .catch {
                     updateUiState { copy(error = it) }
                 }
-                .collect{
+                .collect {
                     updateUiState { copy(isLoading = false, listData = it) }
                 }
         }

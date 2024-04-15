@@ -29,13 +29,9 @@ fun ProductListScreen() {
     }
 
     when {
-        stateUi.isLoading -> {
-            LoadingComponent()
-        }
+        stateUi.isLoading -> LoadingComponent()
 
-        stateUi.error != null -> {
-            ErrorComponent(error = stateUi.error)
-        }
+        stateUi.error != null -> ErrorComponent(error = stateUi.error)
 
         stateUi.listData != null -> {
             VerticalSection(stateUi.listData?.productList ?: emptyList()) {

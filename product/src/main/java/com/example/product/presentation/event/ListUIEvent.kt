@@ -1,8 +1,12 @@
 package com.example.product.presentation.event
 
-sealed interface ListUIEvent {
+import com.example.product.domain.models.Product
 
-    data object Dismiss : ListUIEvent
+sealed class ListUIEvent {
 
-    data object GetList: ListUIEvent
+    data object Dismiss : ListUIEvent()
+
+    data object GetList: ListUIEvent()
+
+    data class ProductClicked(val item: Product) : ListUIEvent()
 }
