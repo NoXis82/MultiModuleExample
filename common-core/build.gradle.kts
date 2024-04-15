@@ -1,13 +1,10 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.dagger.hilt)
-    alias(libs.plugins.kapt)
 }
 
 android {
-    namespace = "com.example.product"
+    namespace = "com.example.common_core"
     compileSdk = 34
 
     defaultConfig {
@@ -47,25 +44,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-
-
-    implementation(libs.kotlinx.serialization)
-//    implementation(libs.hilt.viewmodel)
-//    implementation(libs.androidx.lifecycle.compose)
-//    implementation(libs.lifecycle.viewmodel.compose)
-    implementation(libs.hilt.navigation.compose)
-    implementation(libs.coil)
-
     implementation(libs.androidx.ui)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.ui.graphics)
     implementation(platform(libs.androidx.compose.bom))
 
-    kapt(libs.hilt.android.compiler)
-    implementation(libs.hilt.android)
-    implementation(libs.retrofit)
-    implementation(project(":network"))
-    implementation(project(":common-core"))
 
     testImplementation(libs.junit)
 }

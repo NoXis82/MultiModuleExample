@@ -23,3 +23,5 @@ rootProject.name = "NavigationTestApp"
 include(":app")
 include(":product")
 include(":network")
+include(":details")
+include(":common-core")
