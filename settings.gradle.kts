@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "NavigationTestApp"
 include(":app")
+include(":product")
+include(":network")
