@@ -64,8 +64,9 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.compose)
 
     kapt(libs.hilt.android.compiler)
-//    implementation(project(":network"))
+    implementation(project(":navigation"))
     implementation(project(":product"))
+    implementation(project(":common-core"))
 
     implementation(libs.hilt.android)
     debugImplementation(libs.androidx.ui.tooling)

@@ -1,11 +1,16 @@
 package com.example.product.domain.models
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+
+@Serializable
 data class Product(
-    val productId: String,
-    val productImage: String,
-    val text: String,
-    val subText: String,
-    val review: String,
-    val questions: String,
-    val rating: String,
-)
+    @SerialName("productId") val productId: String,
+    @SerialName("productImage") val productImage: String,
+    @SerialName("text") val text: String,
+    @SerialName("subText") val subText: String,
+    @SerialName("review") val review: String,
+    @SerialName("questions") val questions: String,
+    @SerialName("rating") val rating: String,
+) : java.io.Serializable

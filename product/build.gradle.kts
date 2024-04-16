@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(project(":network"))
     implementation(project(":common-core"))
+    implementation(project(":navigation"))
 
     testImplementation(libs.junit)
 }

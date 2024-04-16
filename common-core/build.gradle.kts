@@ -49,6 +49,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(platform(libs.androidx.compose.bom))
 
-
-    testImplementation(libs.junit)
+    implementation(libs.navigation.compose)
+    implementation(libs.gson)
 }

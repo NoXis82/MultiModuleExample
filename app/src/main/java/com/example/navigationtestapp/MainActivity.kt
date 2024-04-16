@@ -3,28 +3,33 @@ package com.example.navigationtestapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.navigationtestapp.ui.theme.NavigationTestAppTheme
+import com.example.common_core.util.Until.fromJson
+import com.example.navigation.AppNavigation
+import com.example.navigation.Navigator
+import com.example.product.domain.models.Product
 import com.example.product.presentation.screen.ProductListScreen
+import com.example.product.presentation.screen.Test
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    @Inject
+    lateinit var navigator: Navigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ProductListScreen()
+            AppNavigation(
+                navigator = navigator,
+                detailScreen = {
+                    //val item = it.fromJson(Product::class.java)
+                    Test(it)
+                },
+                listScreen = { ProductListScreen() }
+            )
         }
     }
 }

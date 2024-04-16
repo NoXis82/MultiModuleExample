@@ -39,9 +39,9 @@ fun ProductListScreen() {
                 viewModel.onEvent(ListUIEvent.ProductClicked(it))
             }
         }
-        stateUi.productItemDetails != null -> {
-            Test(productItem = stateUi.productItemDetails)
-        }
+//        stateUi.productItemDetails != null -> {
+//            Test(productItem = stateUi.productItemDetails)
+//        }
     }
 
     BackHandler(enabled = true) {
@@ -51,7 +51,7 @@ fun ProductListScreen() {
 
 
 @Composable
-fun Test(productItem: Product?) {
+fun Test(productItem: String?) {
     Box(modifier = Modifier.fillMaxSize()) {
         Text(text = "$productItem")
     }

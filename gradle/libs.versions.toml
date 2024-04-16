@@ -20,6 +20,7 @@ hiltCompiler = "1.2.0"
 hiltNav = "1.2.0"
 coil = "2.6.0"
 navVersion = "2.7.7"
+gsonVersion = "2.10.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -59,6 +60,7 @@ hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCom
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNav" }
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navVersion" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gsonVersion" }
 
 
 [plugins]
