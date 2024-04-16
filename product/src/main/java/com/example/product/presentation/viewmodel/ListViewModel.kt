@@ -3,6 +3,7 @@ package com.example.product.presentation.viewmodel
 import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.example.common_core.presentation.StateAndEventViewModel
+import com.example.product.domain.models.Product
 import com.example.product.domain.use_case.GetListUseCase
 import com.example.product.presentation.event.ListUIEvent
 import com.example.product.presentation.state.ListUIState
@@ -28,9 +29,13 @@ class ListViewModel @Inject constructor(
             }
 
             is ListUIEvent.ProductClicked -> {
-
+                onProductClicked(event.item)
             }
         }
+    }
+
+    private fun onProductClicked(product: Product) {
+        updateUiState { copy(productItemDetails = product, listData = null) }
     }
 
     private fun getProductList() {

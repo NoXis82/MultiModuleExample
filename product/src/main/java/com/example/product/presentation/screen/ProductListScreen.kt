@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -35,15 +36,25 @@ fun ProductListScreen() {
 
         stateUi.listData != null -> {
             VerticalSection(stateUi.listData?.productList ?: emptyList()) {
-                Log.d("TEST", ">>> Product: $it")
+                viewModel.onEvent(ListUIEvent.ProductClicked(it))
             }
+        }
+        stateUi.productItemDetails != null -> {
+            Test(productItem = stateUi.productItemDetails)
         }
     }
 
     BackHandler(enabled = true) {
         viewModel.onEvent(ListUIEvent.Dismiss)
     }
+}
 
+
+@Composable
+fun Test(productItem: Product?) {
+    Box(modifier = Modifier.fillMaxSize()) {
+        Text(text = "$productItem")
+    }
 }
 
 @Composable
