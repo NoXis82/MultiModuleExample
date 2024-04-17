@@ -2,10 +2,12 @@ package com.example.product.presentation.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
@@ -32,12 +34,12 @@ fun VerticalItemCard(
         Modifier
             .padding(8.dp)
             .fillMaxWidth()
+            .height(150.dp)
             .clickable(onClick = { onProductClick(item) })
     }
 
     val imageModifier = remember {
-        Modifier
-            .size(88.dp)
+        Modifier.size(88.dp)
     }
 
     val textModifier = remember {
@@ -51,7 +53,7 @@ fun VerticalItemCard(
         elevation = CardDefaults.cardElevation(defaultElevation = 5.dp)
     ) {
         Row(
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             CoilImageComponent(
                 imageUrl = item.productImage,

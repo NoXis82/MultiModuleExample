@@ -66,6 +66,7 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(project(":navigation"))
     implementation(project(":product"))
+    implementation(project(":details"))
     implementation(project(":common-core"))
 
     implementation(libs.hilt.android)

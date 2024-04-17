@@ -49,9 +49,6 @@ class ListViewModel @Inject constructor(
         }
     }
 
-    private fun onProductClicked(product: Product) {
-        updateUiState { copy(productItemDetails = product, listData = null) }
-    }
 
     private fun getProductList() {
         viewModelScope.launch {
