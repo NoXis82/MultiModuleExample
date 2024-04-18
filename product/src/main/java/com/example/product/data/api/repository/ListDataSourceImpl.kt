@@ -10,8 +10,6 @@ class ListDataSourceImpl @Inject constructor(
     private val api: ListApi
 ) : ListDataSource {
     override suspend fun getList(): ResponseList<ProductDto> {
-        return handleCall {
-            api.getList()
-        }
+        return api.getList()
     }
 }

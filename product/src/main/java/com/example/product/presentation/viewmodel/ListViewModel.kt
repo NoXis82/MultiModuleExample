@@ -6,6 +6,7 @@ import com.example.common_core.presentation.StateAndEventViewModel
 import com.example.common_core.util.Until.toJson
 import com.example.navigation.Navigator
 import com.example.product.domain.models.Product
+import com.example.product.domain.until.Result
 import com.example.product.domain.use_case.GetListUseCase
 import com.example.product.presentation.event.ListUIEvent
 import com.example.product.presentation.state.ListUIState
@@ -57,10 +58,19 @@ class ListViewModel @Inject constructor(
                     updateUiState { copy(isLoading = true) }
                 }
                 .catch {
-                    updateUiState { copy(error = it) }
+                    updateUiState { copy(error = it, isLoading = false) }
                 }
-                .collect {
-                    updateUiState { copy(isLoading = false, listData = it) }
+                .collect { result ->
+                    when(result) {
+                        is Result.Success -> {
+                            updateUiState { copy(isLoading = false, listData = result.data) }
+                        }
+
+                        is Result.Error -> {
+                            updateUiState { copy(errorMsg = result.error, isLoading = false) }
+                        }
+                    }
+
                 }
         }
     }

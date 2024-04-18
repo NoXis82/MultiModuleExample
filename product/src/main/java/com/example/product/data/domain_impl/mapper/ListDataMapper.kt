@@ -5,7 +5,7 @@ import com.example.product.data.api.models.ResponseList
 import com.example.product.domain.models.Product
 import com.example.product.domain.models.ProductList
 
-fun ResponseList<ProductDto>.mapToListData(): ProductList {
+internal fun ResponseList<ProductDto>.mapToListData(): ProductList {
     val domainList = this.listResponse.map { productDto ->
         productDto.toDomainProduct()
     }

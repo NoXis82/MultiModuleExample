@@ -25,6 +25,7 @@ suspend fun <T> handleCall(block: suspend () -> Response<T>): T {
         )
     }
 }
+
 data class GenericException(
     override val message: String?,
     val hasUserFriendlyMessage: Boolean

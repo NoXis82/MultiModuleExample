@@ -17,3 +17,13 @@ fun ErrorComponent(error: Throwable?) {
         error?.message?.let { Text(text = it, color = Color.Red) }
     }
 }
+
+@Composable
+fun ErrorComponentTest(error: String?) {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.fillMaxSize()
+    ) {
+         Text(text = "$error", color = Color.Red)
+    }
+}

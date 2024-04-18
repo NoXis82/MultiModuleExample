@@ -7,5 +7,5 @@ import retrofit2.http.GET
 
 interface ListApi {
     @GET("/basaransuleyman/suleyman-basaranoglu-json/main/list-page-paging-first")
-    suspend fun getList() : Response<ResponseList<ProductDto>>
+    suspend fun getList() : ResponseList<ProductDto>
 }

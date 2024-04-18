@@ -13,7 +13,8 @@ abstract class StateAndEventViewModel<UiState, Event>(initialState: UiState) : V
 
     private val events = MutableSharedFlow<Event>(replay = 0)
     private val _uiState: MutableStateFlow<UiState> = MutableStateFlow(initialState)
-    val uiState: StateFlow<UiState> = _uiState.asStateFlow()
+    val uiState: StateFlow<UiState>
+        get() = _uiState.asStateFlow()
 
     init {
         viewModelScope.launch {
