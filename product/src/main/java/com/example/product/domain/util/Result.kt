@@ -1,4 +1,4 @@
-package com.example.product.domain.until
+package com.example.product.domain.util
 
 typealias RootError = Error
 

@@ -6,7 +6,7 @@ import com.example.common_core.presentation.StateAndEventViewModel
 import com.example.common_core.util.Until.toJson
 import com.example.navigation.Navigator
 import com.example.product.domain.models.Product
-import com.example.product.domain.until.Result
+import com.example.product.domain.util.Result
 import com.example.product.domain.use_case.GetListUseCase
 import com.example.product.presentation.event.ListUIEvent
 import com.example.product.presentation.state.ListUIState

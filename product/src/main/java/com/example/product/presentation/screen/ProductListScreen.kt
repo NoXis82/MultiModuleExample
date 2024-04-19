@@ -18,7 +18,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.common_core.components.ErrorComponent
 import com.example.common_core.components.ErrorComponentTest
 import com.example.product.domain.models.Product
-import com.example.product.domain.until.DataError
+import com.example.product.domain.util.DataError
 import com.example.product.presentation.event.ListUIEvent
 import com.example.product.presentation.viewmodel.ListViewModel
 

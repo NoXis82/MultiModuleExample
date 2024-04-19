@@ -3,8 +3,8 @@ package com.example.product.data.domain_impl.use_case
 import com.example.product.data.api.repository.ListDataSource
 import com.example.product.data.domain_impl.mapper.mapToListData
 import com.example.product.domain.models.ProductList
-import com.example.product.domain.until.DataError
-import com.example.product.domain.until.Result
+import com.example.product.domain.util.DataError
+import com.example.product.domain.util.Result
 import com.example.product.domain.use_case.GetListUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

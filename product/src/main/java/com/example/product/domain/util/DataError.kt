@@ -1,4 +1,4 @@
-package com.example.product.domain.until
+package com.example.product.domain.util
 
 sealed interface DataError: Error {
     enum class NetworkError: DataError {

@@ -3,7 +3,7 @@ package com.example.product.presentation.state
 import androidx.compose.runtime.Immutable
 import com.example.product.domain.models.Product
 import com.example.product.domain.models.ProductList
-import com.example.product.domain.until.DataError
+import com.example.product.domain.util.DataError
 
 @Immutable
 data class ListUIState(
